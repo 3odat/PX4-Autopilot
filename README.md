@@ -1,4 +1,4 @@
-# PX4-Autopilot: LLM-Powered UAV Research 🚀  
+# PX4-Autopilot: LLM-Powered UAV Research 
 **Research on Fine-Tuning Large Language Models (LLMs) for UAVs**  
 
 ## 📌 Project Overview  
