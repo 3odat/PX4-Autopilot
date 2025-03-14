@@ -33,18 +33,18 @@ for image_name in os.listdir(image_dir):
                 confidence = float(result.boxes.conf[i].cpu().item())  # Confidence score
 
                 detections.append({
-                    "Objects": label,
-                    "Confidence": confidence,
-                    "X": float(x),
-                    "Y": float(y),
-                    "Width": float(w),
+                    "label": label,
+                    "confidence": confidence,
+                    "x": float(x),
+                    "y": float(y),
+                    "width": float(w),
                     "height": float(h)
                 })
 
         # Store result for this image
         results_list.append({
             "image": image_name,
-            "Scene": detections
+            "detections": detections
         })
 
         # Draw bounding boxes on image
