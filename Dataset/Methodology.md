@@ -10,11 +10,13 @@
   - **args:** `[]`
   - **description:** Launch UAV into flight.
   ```
+  ```
 - **abbr:** `ld`
   - **name:** `land`
   - **definition:** `set_throttle(0);set_attitude(0);motors_disarm();->True;`
   - **args:** `[]`
   - **description:** Descend and touch down safely.
+  ```
   ```
 - **abbr:** `hv`
   - **name:** `hover`
@@ -22,12 +24,15 @@
   - **args:** `[]`
   - **description:** Maintain a fixed position in the air.
   ```
+
 ### 📍 Navigation & Path Planning
+  ```
 - **abbr:** `wp`
   - **name:** `navigate_to_waypoint`
   - **definition:** `12{?_1=gps_read($1)!=False{set_attitude(0);mf(10);d(500);}};`
   - **args:** `[coordinates:str]`
   - **description:** Navigate to a specified waypoint.
+  ```
   ```
 - **abbr:** `wr`
   - **name:** `follow_waypoint_route`
@@ -35,11 +40,14 @@
   - **args:** `[route:list]`
   - **description:** Follow a predefined waypoint sequence.
   ```
+  ```
+
 - **abbr:** `rh`
   - **name:** `return_home`
   - **definition:** `wp(home_coords);ld();`
   - **args:** `[]`
   - **description:** Return to home position and land.
+  ```
   ```
 - **abbr:** `pp`
   - **name:** `path_plan`
@@ -47,12 +55,14 @@
   - **args:** `[destination:str]`
   - **description:** Compute an optimal flight path and navigate to the destination.
   ```
+  ```
 - **abbr:** `pr`
   - **name:** `path_replan`
   - **definition:** `?od()==True{_1=path_planner(current_target);?_1!=False{wp(_1)}};`
   - **args:** `[]`
   - **description:** Replan the path in real-time if an obstacle is detected.
   ```
+
 ### 🛑 Obstacle Handling
   ```
 - **abbr:** `oa`
@@ -61,12 +71,14 @@
   - **args:** `[]`
   - **description:** Avoid unexpected obstacles.
   ```
+  ```
 - **abbr:** `od`
   - **name:** `obstacle_detect`
   - **definition:** `_1=sensor_check();?_1!=False{->True};->False;`
   - **args:** `[]`
   - **description:** Detect obstacles in the UAV's path.
   ```
+
 ---
 
 ## 🔧 Low-Level Skills
