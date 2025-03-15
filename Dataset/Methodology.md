@@ -105,6 +105,11 @@ await asyncio.sleep(10)  # Hover for 10 seconds
   - **args:** `[coordinates:str]`
   - **description:** Navigate to a specified waypoint.
   ```
+  ```
+await self.drone.action.goto_location(latitude, longitude, altitude, yaw)
+  ```
+
+
 ##### Follow to Specific Waypoint
   ```
 - **abbr:** `wr`
@@ -112,6 +117,10 @@ await asyncio.sleep(10)  # Hover for 10 seconds
   - **definition:** `_1=route[0];?_1!=False{wp(_1);wr(route[1:])};`
   - **args:** `[route:list]`
   - **description:** Follow a predefined waypoint sequence.
+  ```
+  ```
+for waypoint in route:
+    await self.drone.action.goto_location(waypoint[0], waypoint[1], altitude, yaw)
   ```
 ##### Return to Home Posision
   ```
