@@ -184,6 +184,12 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move forward by a distance.
   ```
+  ```
+await self.drone.manual_control.set_manual_control_input(1.0, 0.0, 0.0, 0.0)  # Move forward
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+  ```
+
 ##### Moving Backword
   ```
 - **abbr:** `mb`
@@ -191,6 +197,12 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move backward by a distance.
   ```
+ ```
+await self.drone.manual_control.set_manual_control_input(-1.0, 0.0, 0.0, 0.0)  # Move backward
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+ ```
+
 ##### Moving Left
   ```
 - **abbr:** `ml`
@@ -198,6 +210,13 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move left by a distance.
   ```
+  ```
+await self.drone.manual_control.set_manual_control_input(0.0, -1.0, 0.0, 0.0)  # Move left
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+  ```
+
+
 ##### Moving Right
   ```
 - **abbr:** `mr`
@@ -205,6 +224,13 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move right by a distance.
   ```
+```
+await self.drone.manual_control.set_manual_control_input(0.0, 1.0, 0.0, 0.0)  # Move right
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+```
+
+
 ##### Moving Up
   ```
 - **abbr:** `mu`
@@ -212,6 +238,12 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move up by a distance.
   ```
+  ```
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 1.0, 0.0)  # Move up
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+  ```
+
 ##### Moving Down
   ```
 - **abbr:** `md`
@@ -219,6 +251,12 @@ await self.drone.action.disarm()
   - **args:** `[distance:int]`
   - **description:** Move down by a distance.
   ```
+  ```
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, -1.0, 0.0)  # Move down
+await asyncio.sleep(time_based_on_distance)  # Adjust time based on distance
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop movement
+  ```
+
 
 ### 🔄 Rotation & Positioning
 ##### Turn Clockwise
@@ -228,6 +266,8 @@ await self.drone.action.disarm()
   - **args:** `[degrees:int]`
   - **description:** Rotate clockwise/right by certain degrees.
   ```
+
+
 ##### Turn Counter Clockwise
   ```
 - **abbr:** `tu`
@@ -235,6 +275,12 @@ await self.drone.action.disarm()
   - **args:** `[degrees:int]`
   - **description:** Rotate counterclockwise/left by certain degrees.
   ```
+  ```
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 1.0)  # Rotate clockwise
+await asyncio.sleep(time_based_on_degrees)  # Adjust time based on degrees
+await self.drone.manual_control.set_manual_control_input(0.0, 0.0, 0.0, 0.0)  # Stop rotation
+  ```
+
 ##### Moving in Circle
   ```
 - **abbr:** `mi`
@@ -242,6 +288,7 @@ await self.drone.action.disarm()
   - **args:** `[cw:bool]`
   - **description:** Move in a circular path (clockwise or counterclockwise).
   ```
+
 ### 🕹️ Sensors & Interaction
 ##### Check Visibility of Object
   ```
