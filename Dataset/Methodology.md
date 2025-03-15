@@ -13,8 +13,13 @@
   - **args:** `[]`
   - **description:** Launch UAV into flight.
   ```
-  
-
+  ```
+              if cmd == "tk()":
+                print("🚀 Executing: Takeoff")
+                await self.drone.action.arm()
+                await self.drone.action.takeoff()
+                await asyncio.sleep(3)
+  ```
 ##### Land
 
   ```
