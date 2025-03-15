@@ -76,10 +76,8 @@ asyncio.run(main())
   ```
 ##### Landing - MAVSDK
   ```
-  print("🛬 Executing: Landing")
   await self.drone.action.land()
   await asyncio.sleep(5)
-  print("🔻 Disarming motors")
   await self.drone.action.disarm()
   ```
 
