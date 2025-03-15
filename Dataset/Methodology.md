@@ -58,7 +58,7 @@ asyncio.run(main())
   - **args:** `[]`
   - **description:** Launch UAV into flight.
   ```
-##### Land - MAVSDK
+##### Take Off - MAVSDK
   ```
   await self.drone.action.arm()
   await self.drone.action.takeoff()
