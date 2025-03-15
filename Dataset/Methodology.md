@@ -12,6 +12,29 @@
   - **definition:** `motors_arm();set_throttle(50);?baro_read()>=safe_altitude{->True};`
   - **args:** `[]`
   - **description:** Launch UAV into flight.
+
+import asyncio
+from mavsdk import System
+
+async def execute_takeoff():
+    drone = System()
+    await drone.connect(system_address="udp://:14540")
+
+    print("🚀 Executing: Takeoff")
+    
+    # Arm the motors
+    await drone.action.arm()
+    
+    # Takeoff (PX4 handles throttle automatically)
+    await drone.action.takeoff()
+    
+    # Wait for 5 seconds to stabilize
+    await asyncio.sleep(5)
+
+    print("✅ Takeoff complete")
+
+asyncio.run(execute_takeoff())
+
   ```
 ##### Land
 
