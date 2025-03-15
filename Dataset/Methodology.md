@@ -5,7 +5,7 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
 
 ---
 
-## 🛠 1️⃣ Pre-Flight & Setup Skills
+## 🛠 Pre-Flight & Setup Skills
 
 ```yaml
 - abbr: motors_arm
@@ -35,7 +35,7 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
 
 ---
 
-## 🛫 2️⃣ Basic Flight Skills
+## 🛫 Basic Flight Skills
 
 ```yaml
 - abbr: tk
@@ -59,7 +59,7 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
 
 ---
 
-## 📍 3️⃣ Navigation & Waypoint-Based Skills
+## 📍 Navigation & Waypoint-Based Skills
 
 ```yaml
 - abbr: wp
@@ -83,7 +83,7 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
 
 ---
 
-## 🛑 4️⃣ Obstacle Avoidance & Path Planning
+## 🛑 Obstacle Avoidance & Path Planning
 
 ```yaml
 - abbr: pp
@@ -103,12 +103,47 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
   definition: ?od()==True{mf(-5);tc(45);mf(5);}
   mavsdk: await avoid_obstacle(drone)
   description: Avoid unexpected obstacles.
+
+- abbr: od
+  name: obstacle_detect
+  definition: _1=sensor_check();?_1!=False{->True};->False;
+  mavsdk: await check_obstacles(drone);
+  description: Detects obstacles in UAV’s path.
+
 ```
 
 ---
 
-## 📡 5️⃣ Perception & Object Interaction
+## 📡 5️⃣ Perception & Vision-Based
 
+```yaml
+
+- abbr: iv
+  name: is_visible
+  definition: iv(object_name);
+  mavsdk: await scan_for_object(drone, object_name);
+  description: Checks if an object is visible.
+
+- abbr: ox
+  name: object_x
+  definition: object_x(object_name);
+  mavsdk: await get_object_x(drone, object_name);
+  description: Gets X coordinate of object in camera frame.
+
+- abbr: oy
+  name: object_y
+  definition: object_y(object_name);
+  mavsdk: await get_object_y(drone, object_name);
+  description: Gets Y coordinate of object.
+
+- abbr: od
+  name: object_distance
+  definition: object_dis(object_name);
+  mavsdk: await get_object_distance(drone, object_name);
+  description: Measures object distance.
+```
+
+## 📡 🌐 AI & Camera Skills
 ```yaml
 - abbr: tp
   name: take_picture
@@ -123,9 +158,12 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
   description: Ask AI for reasoning.
 ```
 
+
+
+
 ---
 
-## 📷 6️⃣ Low-Level Control Skills
+## 📷 Low-Level Control Skills
 
 ```yaml
 - abbr: mf
