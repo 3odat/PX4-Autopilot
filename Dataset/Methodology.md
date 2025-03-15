@@ -89,6 +89,11 @@ asyncio.run(main())
   - **args:** `[]`
   - **description:** Maintain a fixed position in the air.
   ```
+##### Hover - MAVSDK
+  ```
+await self.drone.action.hold()
+await asyncio.sleep(10)  # Hover for 10 seconds
+  ```
 
 ### 📍 Navigation & Path Planning
 
