@@ -1,7 +1,11 @@
 # UAV Skill Set Documentation
 
+# Quick Example
 
   ```
+import asyncio
+from mavsdk import System
+
 class MiniSpecExecutor:
     def __init__(self):
         self.drone = System()
@@ -16,6 +20,29 @@ class MiniSpecExecutor:
         commands = command.split(";")
         for cmd in commands:
             cmd = cmd.strip()
+
+            if cmd == "tk()":
+                print("🚀 Executing: Takeoff")
+                await self.drone.action.arm()
+                await self.drone.action.takeoff()
+                await asyncio.sleep(3)
+
+            elif cmd == "ld()":
+                print("🛬 Executing: Landing")
+                await self.drone.action.land()
+                await asyncio.sleep(5)
+                print("🔻 Disarming motors")
+                await self.drone.action.disarm()
+
+async def main():
+    executor = MiniSpecExecutor()
+    await executor.connect()
+
+    # Example MiniSpec Task: Takeoff → Hover → Land
+    minispec_task = "tk(); ld();"
+    await executor.execute(minispec_task)
+
+asyncio.run(main())
 
   ```
 ## 🚀 High-Level Skills
