@@ -13,12 +13,12 @@
   - **args:** `[]`
   - **description:** Launch UAV into flight.
   ```
+##### Land - MAVSDK
   ```
-              if cmd == "tk()":
-                print("🚀 Executing: Takeoff")
-                await self.drone.action.arm()
-                await self.drone.action.takeoff()
-                await asyncio.sleep(3)
+  await self.drone.action.arm()
+  await self.drone.action.takeoff()
+  await asyncio.sleep(3)
+
   ```
 ##### Land
 
@@ -28,6 +28,13 @@
   - **definition:** `set_throttle(0);set_attitude(0);motors_disarm();->True;`
   - **args:** `[]`
   - **description:** Descend and touch down safely.
+  ```
+  ```
+  print("🛬 Executing: Landing")
+  await self.drone.action.land()
+  await asyncio.sleep(5)
+  print("🔻 Disarming motors")
+  await self.drone.action.disarm()
   ```
 
 ##### Hover
