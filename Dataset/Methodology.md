@@ -12,7 +12,8 @@
   - **definition:** `motors_arm();set_throttle(50);?baro_read()>=safe_altitude{->True};`
   - **args:** `[]`
   - **description:** Launch UAV into flight.
-
+  ```
+  ```
 import asyncio
 from mavsdk import System
 
@@ -34,6 +35,7 @@ async def execute_takeoff():
     print("✅ Takeoff complete")
 
 asyncio.run(execute_takeoff())
+  ```
 
   ```
 ##### Land
