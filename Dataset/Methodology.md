@@ -47,6 +47,33 @@ asyncio.run(execute_takeoff())
   - **args:** `[]`
   - **description:** Descend and touch down safely.
   ```
+  ```
+import asyncio
+from mavsdk import System
+
+async def execute_landing():
+    drone = System()
+    await drone.connect(system_address="udp://:14540")
+
+    print("🛬 Executing: Landing")
+
+    # Command the drone to land
+    await drone.action.land()
+    
+    # Wait for UAV to fully land
+    await asyncio.sleep(5)
+
+    # Disarm motors after landing
+    print("🔻 Disarming motors")
+    await drone.action.disarm()
+
+    print("✅ Landing complete")
+
+asyncio.run(execute_landing())
+```
+
+
+
 ##### Hover
   ```
 - **abbr:** `hv`
