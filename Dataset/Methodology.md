@@ -1,5 +1,23 @@
 # UAV Skill Set Documentation
 
+
+  ```
+class MiniSpecExecutor:
+    def __init__(self):
+        self.drone = System()
+
+    async def connect(self):
+        """Connects to PX4 Gazebo only once."""
+        await self.drone.connect(system_address="udp://:14540")
+        print("✅ Connected to PX4 Gazebo")
+
+    async def execute(self, command):
+        """Parses and executes MiniSpec commands sequentially."""
+        commands = command.split(";")
+        for cmd in commands:
+            cmd = cmd.strip()
+
+  ```
 ## 🚀 High-Level Skills
 
 ### ✈️ Flight Operations
