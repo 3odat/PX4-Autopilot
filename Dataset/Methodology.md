@@ -37,7 +37,7 @@ async def execute_takeoff():
 asyncio.run(execute_takeoff())
   ```
 
-  ```
+
 ##### Land
 
   ```
