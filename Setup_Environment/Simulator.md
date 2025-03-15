@@ -1,5 +1,6 @@
-**Step 1: Install and Set Up Isaac Sim**
-----------------------------------------
+Paste your rich text content here. You can paste directly from
+
+## **Step 1: Install and Set Up Isaac Sim**
 
 ### **1️⃣ Install Isaac Sim from ZIP**
 
@@ -7,26 +8,52 @@ If you downloaded the ZIP version, follow these steps:
 
 🔹 **Extract Isaac Sim ZIP**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditunzip isaac_sim-.zip -d ~/omniverse   `
+bash
+
+CopyEdit
+
+`unzip isaac_sim-<version>.zip -d ~/omniverse`
 
 🔹 **Go into the Isaac Sim folder**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcd ~/omniverse/isaac_sim   `
+bash
+
+CopyEdit
+
+`cd ~/omniverse/isaac_sim`
 
 🔹 **Run the setup script**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEdit./setup.sh   `
+bash
+
+CopyEdit
+
+`./setup.sh`
 
 🔹 **Launch Isaac Sim**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEdit./isaac-sim.sh   `
+bash
 
-🎯 **Expected Result:**Isaac Sim should launch **in a new window**.
+CopyEdit
+
+`./isaac-sim.sh`
+
+🎯 **Expected Result:**  
+Isaac Sim should launch **in a new window**.
+
+* * *
 
 ### **2️⃣ Verify NVIDIA GPU and Dependencies**
 
 Since Isaac Sim relies on **CUDA + PhysX**, ensure you have the required libraries:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnvidia-smi  # Check if GPU is recognized  nvcc --version  # Check if CUDA is installed   `
+bash
 
-🎯 **Expected Result:**You should see **GPU details and CUDA version.**
+CopyEdit
+
+`nvidia-smi  # Check if GPU is recognized nvcc --version  # Check if CUDA is installed`
+
+🎯 **Expected Result:**  
+You should see **GPU details and CUDA version.**
+
+Word or other rich text sources.
