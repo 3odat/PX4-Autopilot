@@ -130,6 +130,13 @@ for waypoint in route:
   - **args:** `[]`
   - **description:** Return to home position and land.
   ```
+  ```
+await self.drone.action.return_to_launch()
+await asyncio.sleep(5)  # Wait for descent
+await self.drone.action.disarm()
+  ```
+
+
 ##### Path Planning
   ```
 - **abbr:** `pp`
