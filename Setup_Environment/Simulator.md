@@ -8,33 +8,19 @@ If you downloaded the ZIP version, follow these steps:
 
 🔹 **Extract Isaac Sim ZIP**
 
-bash
-
-CopyEdit
 
 `unzip isaac_sim-<version>.zip -d ~/omniverse`
 
 🔹 **Go into the Isaac Sim folder**
 
-bash
-
-CopyEdit
 
 `cd ~/omniverse/isaac_sim`
 
 🔹 **Run the setup script**
 
-bash
-
-CopyEdit
-
 `./setup.sh`
 
 🔹 **Launch Isaac Sim**
-
-bash
-
-CopyEdit
 
 `./isaac-sim.sh`
 
@@ -47,9 +33,6 @@ Isaac Sim should launch **in a new window**.
 
 Since Isaac Sim relies on **CUDA + PhysX**, ensure you have the required libraries:
 
-bash
-
-CopyEdit
 
 `nvidia-smi  # Check if GPU is recognized nvcc --version  # Check if CUDA is installed`
 
