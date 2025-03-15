@@ -152,6 +152,83 @@ This document provides a structured **MiniSpec Skill Set** categorized by UAV ta
   mavsdk: await drone.action.set_manual_control_input(0.0, 1.0, 0.0, 0.0)
   description: Move right.
 ```
+# 🚀 UAV MiniSpec Skills for PX4 & Tello (MAVSDK Execution)
+
+## ✨ Why This Skill Set?
+This MiniSpec skill set is **designed for UAV automation** using **MAVSDK for PX4 drones** and **vision-based perception for Tello drones**.  
+It includes **mission-critical flight operations, object detection, navigation, and AI-assisted decision-making**.
+
+## ✅ What This Covers
+- **🛫 Navigation & Path Planning** (Waypoint flying, route following, dynamic replanning)
+- **📡 Perception & Object Interaction** (Vision-based tracking, AI-assisted object detection)
+- **🛑 Obstacle Avoidance & Safety** (Obstacle detection, emergency landing, geofencing)
+- **📡 Communication & AI** (LLM-assisted decisions, real-time telemetry, logging)
+- **⚙️ Full Control Over UAV Motion** (Precise movement using low-level controls)
+
+---
+
+## 🔥 MiniSpec Skill Categories & Mappings
+### **🛠 Pre-Flight & Setup**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `motors_arm` | `motors_arm();` | `await drone.action.arm();` | Arms UAV motors before takeoff. |
+| `baro_read` | `baro_read();` | `async for altitude in drone.telemetry.altitude(): return altitude.relative_altitude_m;` | Reads barometric altitude. |
+| `gps_read` | `gps_read();` | `async for position in drone.telemetry.position(): return position.latitude, position.longitude;` | Reads GPS coordinates. |
+| `sensor_check` | `sensor_check();` | `await validate_sensors(drone);` | Checks for hardware and sensor integrity. |
+
+### **🛫 Flight Control**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `tk` | `takeoff();` | `await drone.action.arm(); await drone.action.takeoff();` | UAV launches into the air. |
+| `ld` | `land();` | `await drone.action.land();` | Commands UAV to descend and land. |
+| `hv` | `hover();` | `await asyncio.sleep(3);` | Keeps UAV hovering in a fixed position. |
+
+### **📍 Navigation & Path Planning**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `wp(x, y, z)` | `goto_waypoint(x, y, z);` | `await drone.action.goto_location(x, y, z, 0);` | Fly to a specified GPS waypoint. |
+| `wr(route)` | `follow_route(route);` | `for wp in waypoints: await drone.action.goto_location(wp.x, wp.y, wp.z, 0);` | Follow a set of waypoints. |
+| `rh` | `return_home();` | `await drone.action.return_to_launch();` | Returns to takeoff location. |
+| `pp(destination)` | `plan_path(destination);` | `await plan_safe_route(destination);` | Generates an optimized route to a destination. |
+| `pr` | `path_replan();` | `await replan_route(drone);` | Replans route if obstacles are detected. |
+
+### **🛑 Obstacle Avoidance & Safety**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `oa` | `obstacle_avoidance();` | `await avoid_obstacle(drone);` | Avoids obstacles dynamically. |
+| `od` | `obstacle_detect();` | `await check_obstacles(drone);` | Detects obstacles in UAV’s path. |
+| `el` | `emergency_land();` | `await drone.action.land();` | Triggers emergency landing. |
+
+### **📡 Perception & Vision-Based Skills**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `iv(object_name)` | `is_visible(object_name);` | `await scan_for_object(drone, object_name);` | Checks if an object is visible. |
+| `ox(object_name)` | `object_x(object_name);` | `await get_object_x(drone, object_name);` | Gets X coordinate of object in camera. |
+| `oy(object_name)` | `object_y(object_name);` | `await get_object_y(drone, object_name);` | Gets Y coordinate of object. |
+| `od(object_name)` | `object_dis(object_name);` | `await get_object_distance(drone, object_name);` | Measures object distance. |
+
+### **📷 Camera & AI-Assisted Decision-Making**
+| **Skill** | **MiniSpec** | **MAVSDK Equivalent** | **Purpose** |
+|-----------|------------|----------------------|------------|
+| `tp` | `take_picture();` | `await drone.camera.take_photo();` | Captures an image. |
+| `p(question)` | `probe(question);` | `await query_ai_for_answer(drone, question);` | Uses LLM for AI-based reasoning. |
+
+---
+
+## 🚀 **Why Commit to This?**
+✅ Covers **both GPS (PX4) and Vision-based (Tello) UAVs**  
+✅ Includes **autonomous navigation, perception, AI-driven decision-making**  
+✅ Supports **obstacle avoidance, emergency handling, and telemetry**  
+✅ Future-proof **for SLAM, multi-UAV, and deep learning integration**  
+
+---
+
+## **Next Steps**
+Would you like me to:  
+1️⃣ **Automate dataset generation with these skills?**  
+2️⃣ **Develop a Python framework to parse and execute MiniSpec?**  
+
+Let me know how you'd like to proceed! 🚀📊
 
 ---
 
