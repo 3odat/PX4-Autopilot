@@ -1,6 +1,6 @@
 # PX4-Autopilot: LLM-Powered UAV Research 
 **Research on Fine-Tuning Large Language Models (LLMs) for UAVs**  
-
+### https://www.youtube.com/watch?v=bZcKYiwtw1I&ab_channel=NeuralBreakdownwithAVB
 ## 📌 Project Overview  
 This project explores the integration of **Large Language Models (LLMs)** into UAV autopilot systems using the **PX4 Autopilot framework**. Our goal is to:  
 
