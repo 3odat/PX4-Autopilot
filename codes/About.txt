@@ -1,0 +1,69 @@
+Key Features
+Comprehensive Command Set:
+
+Basic controls: takeoff, land, arm/disarm
+
+Directional movement: forward, backward, left, right, up, down
+
+Rotation control: yaw left/right
+
+Advanced functions: goto coordinates, orbit, return to launch
+
+Object Detection Integration:
+
+Commands to detect and navigate to person, car, or truck
+
+Reads from your target_detection.json file
+
+Robust Error Handling:
+
+Multiple arm/disarm attempts
+
+Command timeouts
+
+Telemetry verification
+
+Graceful failure recovery
+
+Real-time Monitoring:
+
+Position tracking during movement
+
+Battery monitoring
+
+Telemetry logging
+
+Detailed status reporting
+
+Safety Features:
+
+Automatic landing on exit
+
+Command cancellation
+
+Offboard mode management
+
+Position verification
+
+How to Use
+Start the script: python3 drone_controller.py
+
+Connect to drone: Happens automatically on startup (uses UDP port 14540)
+
+Take off: takeoff 5 (to 5 meters altitude)
+
+Move commands:
+
+forward 10 (move 10 meters forward)
+
+yaw_right 90 (rotate 90 degrees clockwise)
+
+Object detection: goto_person (finds and navigates to detected person)
+
+Advanced maneuvers: orbit 5 2 (circle with 5m radius at 2 m/s)
+
+Status monitoring: status (shows comprehensive drone telemetry)
+
+Land safely: land or rtl (return to launch)
+
+The code is fully compatible with your PX4 SITL environment and provides a comprehensive command interface for controlling your drone efficiently in your simulation with the roads, vehicles, and person shown in your images
